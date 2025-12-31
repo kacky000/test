@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>こみゃくゲーム</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.19.0/matter.min.js"></script>
+</head>
+<body>
+    <div id="game-container">
+        <div class="ui-panel">
+            <h1>こみゃく</h1>
+            <div class="ui-content">
+                <div class="score-area">
+                    <div class="score-label">SCORE</div>
+                    <div class="score-value" id="score-display">0</div>
+                    <div class="best-score" id="best-score">BEST: 0</div>
+                </div>
+                <div class="next-area">
+                    <div class="next-label">NEXT</div>
+                    <div class="next-preview">
+                        <canvas id="next-canvas" width="140" height="140"></canvas>
+                    </div>
+                </div>
+            </div>
+            <div class="game-buttons">
+                <button class="game-button primary" id="pause-button">⏸ 一時停止</button>
+            </div>
+        </div>
+        <canvas id="evolution-ring-canvas" width="60" height="650"></canvas>
+        <div id="game-canvas-wrapper"></div>
+        <div class="pause-popup" id="pause-popup">
+            <div class="pause-content">
+                <div class="pause-title">一時停止中</div>
+                <div class="pause-buttons">
+                    <button class="pause-btn continue-btn" id="continue-button">▶ 続ける</button>
+                    <button class="pause-btn restart-btn" id="restart-button">🔄 やり直し</button>
+                    <button class="pause-btn share-btn" id="share-ingame-button">𝕏 シェア</button>
+                </div>
+            </div>
+        </div>
+        <div class="game-over" id="game-over">
+            <div class="game-over-title">GAME OVER</div>
+            <div class="score-details">
+                <div class="current-score" id="current-score-display">スコア: 0</div>
+                <div class="best-score-display" id="best-score-result">ベストスコア: 0</div>
+                <div class="new-record" id="new-record-badge" style="display: none;">🎉 NEW RECORD! 🎉</div>
+            </div>
+            <div class="game-over-buttons">
+                <button class="retry-button" id="retry-button">もう一度やる</button>
+                <button class="share-button" id="share-button">𝕏でシェア</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="game.js"></script>
+</body>
+</html>
